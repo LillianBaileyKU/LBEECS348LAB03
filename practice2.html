@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>CSS Font Control</title>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 40px;
+        }
+
+        #text {
+            border: 2px solid black;
+            padding: 20px;
+            width: 60%;
+        }
+    </style>
+
+    <script>
+        function changeColor() {
+            var red = document.getElementById("red").value;
+            var green = document.getElementById("green").value;
+            var blue = document.getElementById("blue").value;
+            var color = "rgb(" + red + "," + green + "," + blue + ")";
+            document.getElementById("text").style.color = color;
+            document.getElementById("text").style.borderCollapse = color;
+        }
+
+        function changeBorder() {
+            var width = document.getElementById("borderWidth").value;
+            document.getElementById("text").style.borderWidth = width + "px";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>CSS Font Control Page</h1>
+    <p>Enter RGB values to change the color of the paragraph and its border. You can also change the width of the border.</p>
+
+    <label>Red:</label>
+    <input type="number" id="red" min="0" max="255" value="0">
+    <br><br>
+    <label>Green:</label>
+    <input type="number" id="green" min="0" max="255" value="0">
+    <br><br>
+    <label>Blue:</label>
+    <input type="number" id="blue" min="0" max="255" value="0">
+    <br><br>
+    <label>Border Width:</label>
+    <input type="number" id="borderWidth" min="1" max="2">
+    <br><br>
+
+    <button onclick="changeColor()">Change Color</button>
+    <button onclick="changeBorder()">Change Border Width</button>
+    <p id="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is some dummy text for the CSS font control exercise. The color of this paragraph and its border can be changed using the controls above.</p>
+
+    <a href="index.html">Back to index</a>
+</body>
+
+</html>
